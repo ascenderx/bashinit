@@ -82,10 +82,14 @@ javarepl() {
     popd > /dev/null
 }
 
-# Script: Divert Emacs command to /Applications/Emacs.app in nox mode
-# emacs() {
-#     #/Applications/Emacs.app/Contents/MacOS/Emacs -nw $*
-# }
+# Script: Divert Emacs command to /Applications/Emacs.app
+emacs() {
+    # Nox/terminal mode
+    # /Applications/Emacs.app/Contents/MacOS/Emacs -nw $*
+    
+    # GUI mode
+    /Application/Emacs.app/Contents/MacsOS/Emacs $*
+}
 
 # Script: Run GEdit
 gedit() {
