@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# Function: push from local git rep to remote rep
+gitpush() {
+    pushd $SRC/$1 > /dev/null
+    git push origin master
+    popd > /dev/null
+}
+
+# Function: pull from remote git rip to local rep
+gitpull() {
+    pushd $SRC/$1 > /dev/null
+    git pull origin master
+    popd > /dev/null
+}
+
+# Alias: Programming super-folder
+export SRC='/home/downerj/Documents/Programming'

@@ -47,6 +47,9 @@ settitle ()
 # Include color variables for formatted output and prompt
 source /home/downerj/.bash_colors
 
+# Include custom git commands
+source /home/downerj/.git_commands
+
 # Customize prompt
 if [ "$SSH_TTY" ]
 then
