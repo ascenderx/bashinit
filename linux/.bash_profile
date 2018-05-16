@@ -18,6 +18,9 @@ alias ll='ls -hF -o --color=auto --group-directories-first'
 alias lR='ls -hF -R --color=auto --group-directories-first'
 alias la='ls -hF -o -a --color=auto --group-directories-first'
 
+# Set directory colors in ls to white
+export LS_COLORS=$LS_COLORS:'di=1;36'
+
 # Get ANSI colors
 source ~/.bash_colors
 
@@ -27,6 +30,7 @@ export PS2="$_LGreen --> $_Reset"
 
 # Set clear to \033c
 alias clear='echo -ne "\033c"'
+alias pclear='echo -ne "\033c"; echo -ne "\033[3J"'
 
 # Lock screen
 alias lock='gnome-screensaver-command -l'
@@ -51,6 +55,10 @@ export PATH=$PATH:$TEXMACS_PATH/bin
 
 # Add scripts folder
 export PATH=$PATH:~/scripts
+
+# Directory memory commands
+alias setlwd='echo $(pwd) > ~/.lastdir'
+alias getlwd='pushd $(cat ~/.lastdir) >> /dev/null'
 
 # Startup commands
 cd ~
