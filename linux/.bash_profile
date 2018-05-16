@@ -1,94 +1,56 @@
-# .bashrc
-
-#####################################
-# The following code was taken from #
-#  the default Ubuntu .bashrc file  #
-#####################################
-
-# Interactive operation...
+# Interactive options
 alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
 
-# Default to human readable figures
+# Human-readable figures
 alias df='df -h'
 alias du='du -h'
 
-# show differences in colour
+# Show differences in color
 alias grep='grep --color'
-alias egrep='egrep --color=auto'                
-alias fgrep='fgrep --color=auto'                
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
 
-# Some shortcuts for different directory listings
-alias ls='ls -hF -l --color=auto'               # classify files in colour
-alias dir='ls --color=auto --format=vertical'
-alias vdir='ls --color=auto --format=long'
-alias la='ls -l -A'                             # all but . and ..
+# Shortuct for directory listings
+alias lx='ls -hF -x --color=auto --group-directories-first'
+alias ll='ls -hF -o --color=auto --group-directories-first'
+alias lR='ls -hF -R --color=auto --group-directories-first'
+alias la='ls -hF -o -a --color=auto --group-directories-first'
 
-# Set title
-settitle () 
-{ 
-  echo -ne "\e]2;$@\a\e]1;$@\a"; 
-}
+# Get ANSI colors
+source ~/.bash_colors
 
-#####################################
-# The following was taken from the  #
-# Udacity git course and is used to #
-#    enhance git functionality      #        
-#####################################
-# source /home/downerj/.git-completion.bash
-# source /home/downerj/.git-prompt.sh
-
-#####################################
-# The following code was written by #
-#           James D. Downer         #
-#####################################
-
-# Include color variables for formatted output and prompt
-source /home/downerj/.bash_colors
-
-# Include custom git commands
-source /home/downerj/.git_commands
-
-# Customize prompt
-if [ "$SSH_TTY" ]
-then
-    export PS1="$_lblue[$_lcyan\W$_lblue] $_lgreen$ $_reset"
-else
-    # export PS1="$_lblue[$_lcyan\W$_lblue]$_dyellow\$(__git_ps1) $_lgreen$ $_reset"
-    export PS1="$_lblue[$_lcyan\W$_lblue] $_lgreen$ $_reset"
-    echo -ne "$_LBlue[$_LYellow$USER$_LBlue@$_LRed$HOSTNAME$_LBlue]\n"
-fi
+# Custom prompt
+export PS1="$_lyellow\u $_lcyan\W $_lgreen$ $_reset"
 export PS2="$_LGreen --> $_Reset"
 
-# Set directory colors in ls to white
-LS_COLORS=$LS_COLORS:'di=1;36:' ; export LS_COLORS
-
-# Set 'clear' to clear all scrollback
+# Set clear to \033c
 alias clear='echo -ne "\033c"'
 
-# Add Scripts folder to path (Ubuntu)
-# export PATH=$PATH:/home/downerj/Scripts
+# Lock screen
+alias lock='gnome-screensaver-command -l'
 
-# Add Cling to PATH
-export PATH=$PATH:/usr/lib/cling/bin
+# Shortcut to JavaREPL
+alias javarepl='java -jar /usr/lib/jvm/javarepl-428.jar'
 
-# Set Python/Python3 to run ANSI commands on startup
-export PYTHONSTARTUP="/home/downerj/.python/initsys.py"
-export PYTHONPATH=$PYTHONPATH:"/home/downerj/.python/"
+# Shortcuts for SSH and SFTP
+alias byuiSSH='ssh -X downerj@157.201.194.205 -p 215'
+alias byuiSFTP='sftp -P 215 downerj@157.201.194.205'
+alias byuiTunnel='ssh -L 1024:157.201.194.254:80 downerj@157.201.194.205 -p 215'
 
-# Set lynx homepage to Google
-export WWW_HOME="www.google.com"
+# lynx
+export WWW_HOME='https://www.google.com'
 
-# Command: see current date & time
-alias now='date "+<%j:%W> [%a %m/%d/%Y] %H:%M"'
+# forking
+alias execnew='gnome-terminal -e $*'
 
-# Link: run JavaREPL
-alias javarepl="pushd /usr/lib/javarepl > /dev/null && java -jar javarepl.jar ; popd > /dev/null"
-
-# Set TeXmacs path variables
-export TEXMACS_PATH=/usr/lib/TeXmacs
+# TeXmacs setup
+export TEXMACS_PATH='/usr/lib/texmacs'
 export PATH=$PATH:$TEXMACS_PATH/bin
 
-### Bash startup script ###
+# Add scripts folder
+export PATH=$PATH:~/scripts
 
+# Startup commands
+cd ~
