@@ -13,10 +13,10 @@ alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 
 # Shortuct for directory listings
-alias lx='ls -hF -x --color=auto --group-directories-first'
-alias ll='ls -hF -o --color=auto --group-directories-first'
-alias lR='ls -hF -R --color=auto --group-directories-first'
-alias la='ls -hF -o -a --color=auto --group-directories-first'
+alias lx='ls -hFGx --group-directories-first'
+alias ll='ls -hFGo --group-directories-first'
+alias lR='ls -hFGR --group-directories-first'
+alias la='ls -AhFGo --group-directories-first'
 
 # Set directory colors in ls to cyan
 export LS_COLORS=$LS_COLORS:'di=1;36'
@@ -42,5 +42,6 @@ source ~/.bash_scripts
 alias setlwd='echo $(pwd) > ~/.lastdir'
 alias getlwd='pushd $(cat ~/.lastdir) >> /dev/null'
 
-# Startup commands
+### Commands to run upon terminal execution
 cd ~
+echo -ne "$_LCyan@$_LRed$HOSTNAME$_Reset\n"
