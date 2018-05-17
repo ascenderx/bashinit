@@ -15,7 +15,7 @@ alias fgrep='fgrep --color=auto'
 # Shortuct for directory listings
 alias lx='ls -FGx'
 alias ll='ls -FGho'
-alias lR='ls -FGR'
+alias lr='ls -FGR'
 alias la='ls -AhFGo'
 
 # Set directory colors

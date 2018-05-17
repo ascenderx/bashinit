@@ -13,10 +13,10 @@ alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 
 # Shortuct for directory listings
-alias lx='ls -hF -x --color=auto --group-directories-first'
-alias ll='ls -hF -o --color=auto --group-directories-first'
-alias lR='ls -hF -R --color=auto --group-directories-first'
-alias la='ls -hF -o -a --color=auto --group-directories-first'
+alias lx='ls -Fhx --color=auto --group-directories-first'
+alias ll='ls -Fho --color=auto --group-directories-first'
+alias lr='ls -FhR --color=auto --group-directories-first'
+alias la='ls -aFho --color=auto --group-directories-first'
 
 # Set directory colors in ls to cyan
 export LS_COLORS=$LS_COLORS:'di=1;36'
@@ -44,6 +44,7 @@ alias xbash="sudo enter-chroot -n xenial"
 alias xunity="sudo startunity"
 alias xgnome="sudo enter-chroot gnome-session-wrapper gnome-flashback-metacity"
 
-# Startup commands
+### Commands to run upon terminal execution
 cd ~
+echo -ne "$_LCyan@$_LRed$HOSTNAME$_Reset\n"
 

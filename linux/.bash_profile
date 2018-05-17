@@ -13,10 +13,10 @@ alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 
 # Shortuct for directory listings
-alias lx='ls -hFGx --group-directories-first'
-alias ll='ls -hFGo --group-directories-first'
-alias lR='ls -hFGR --group-directories-first'
-alias la='ls -AhFGo --group-directories-first'
+alias lx='ls -hFx --color=auto --group-directories-first'
+alias ll='ls -hFo --color=auto --group-directories-first'
+alias lr='ls -hFR --color=auto --group-directories-first'
+alias la='ls -AhFo --color=auto --group-directories-first'
 
 # Set directory colors in ls to cyan
 export LS_COLORS=$LS_COLORS:'di=1;36'
