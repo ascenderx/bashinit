@@ -32,15 +32,18 @@ export PS2="$_LGreen --> $_Reset"
 alias clear='echo -ne "\033c"'
 alias pclear='echo -ne "\033c"; echo -ne "\033[3J"'
 
-# Lock screen
-alias lock='gnome-screensaver-command -l'
-
-# Load other scripts
+# load other scripts
 source ~/.bash_scripts
 
 # Directory memory commands
 alias setlwd='echo $(pwd) > ~/.lastdir'
 alias getlwd='pushd $(cat ~/.lastdir) >> /dev/null'
 
+# Shortcut: crouton
+alias xbash="sudo enter-chroot -n xenial"
+alias xunity="sudo startunity"
+alias xgnome="sudo enter-chroot gnome-session-wrapper gnome-flashback-metacity"
+
 # Startup commands
 cd ~
+
