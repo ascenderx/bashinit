@@ -141,5 +141,8 @@ confirm sudo chown $USER /usr/lib/famitracker/famitracker.sh &&\
 confirm sudo chmod u+x /usr/lib/famitracker/famitracker.sh &&\
 confirm sudo update-alternatives --install "/bin/famitracker" "famitracker" "/usr/lib/famitracker/famitracker.sh" 1
 
+# GNOME Control Center (system settings)
+confirm sudo apt-get install gnome-control-center
+
 # exit downloads/install
 popd > /dev/null
