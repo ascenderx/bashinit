@@ -90,6 +90,7 @@ confirm tar -xf texmacs.tar &&\
 rm -i texmacs.tar
 confirm sudo mv texmacs /usr/lib/ &&\
 confirm sudo cp ./scripts/texmacs.sh /usr/lib/texmacs/ &&\
+confirm sudo chown $USER /usr/lib/texmacs/texmacs.sh &&\
 confirm sudo chmod u+x /usr/lib/texmacs/texmacs.sh &&\
 confirm sudo update-alternatives --install "/bin/texmacs" "texmacs" "/usr/lib/texmacs/texmacs.sh" 1
 
@@ -136,6 +137,7 @@ confirm unzip famitracker.zip -d famitracker &&\
 rm -i famitracker.zip
 confirm sudo mv famitracker /usr/lib/
 confirm sudo cp ./scripts/famitracker.sh /usr/lib/famitracker/ &&\
+confirm sudo chown $USER /usr/lib/famitracker/famitracker.sh &&\
 confirm sudo chmod u+x /usr/lib/famitracker/famitracker.sh &&\
 confirm sudo update-alternatives --install "/bin/famitracker" "famitracker" "/usr/lib/famitracker/famitracker.sh" 1
 
