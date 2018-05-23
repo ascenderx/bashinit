@@ -89,7 +89,7 @@ confirm gunzip texmacs.tar.gz &&\
 confirm tar -xf texmacs.tar &&\
 rm -i texmacs.tar
 confirm sudo mv texmacs /usr/lib/ &&\
-confirm sudo cp ./scripts/texmacs.sh /usr/lib/texmacs &&\
+confirm sudo cp ./scripts/texmacs.sh /usr/lib/texmacs/ &&\
 confirm sudo chmod u+x /usr/lib/texmacs/texmacs.sh &&\
 confirm sudo update-alternatives --install "/bin/texmacs" "texmacs" "/usr/lib/texmacs/texmacs.sh" 1
 
@@ -128,6 +128,16 @@ confirm sudo apt-get install xfonts-terminus
 
 # Mozilla Firefox web browser
 confirm sudo apt-get install firefox
+
+# Famitracker (NES-style music tracker-notation software)
+tempURL="http:/www.famitracker.com/files/FamiTracker-v0.4.6.zip"
+confirm curl $tempURL -o famitracker.zip &&\
+confirm unzip famitracker.zip -d famitracker &&\
+rm -i famitracker.zip
+confirm sudo mv famitracker /usr/lib/
+confirm sudo cp ./scripts/famitracker.sh /usr/lib/famitracker/ &&\
+confirm sudo chmod u+x /usr/lib/famitracker/famitracker.sh &&\
+confirm sudo update-alternatives --install "/bin/famitracker" "famitracker" "/usr/lib/famitracker/famitracker.sh" 1
 
 # exit downloads/install
 popd > /dev/null
