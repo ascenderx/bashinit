@@ -120,5 +120,8 @@ confirm sudo apt-get install dnsutils
 # Lynx console-based web browser
 confirm sudo apt-get install lynx
 
+# Tree viewer for console
+confirm sudo apt-get install tree
+
 # exit downloads/install
 popd > /dev/null
