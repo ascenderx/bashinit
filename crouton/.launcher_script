@@ -1,0 +1,5 @@
+#!/bin/bash
+
+if [ $DESKTOP_SESSION = "gnome-flashback-metacity" ]
+then gnome-panel
+fi
