@@ -126,5 +126,8 @@ confirm sudo apt-get install tree
 # Terminus X-Font
 confirm sudo apt-get install xfonts-terminus
 
+# Mozilla Firefox web browser
+confirm sudo apt-get install firefox
+
 # exit downloads/install
 popd > /dev/null
