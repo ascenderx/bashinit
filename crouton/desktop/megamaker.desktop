@@ -1,0 +1,14 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Version=1.0
+Type=Application
+Terminal=false
+Icon[en_US]=/usr/lib/megamaker/Rockmii.png
+Name[en_US]=MegaMan Maker
+Exec=/usr/lib/megamaker/megamaker.sh
+Comment[en_US]=MegaMan Level Editor
+Name=MegaMan Maker
+Comment=MegaMan Level Editor
+Icon=/usr/lib/megamaker/Rockmii.png
+Categories=Games;
+
