@@ -16,14 +16,10 @@ confirm() {
       $*
    else
       echo "Skipping \"$*\"..."
-      echo "Skipped \"$*\"..." >> ~/skipped.log
    fi
    
    echo -e "######################################################\n\n"
 }
-
-## erase skipped.log (user confirmation needed)
-rm -i ~/skipped.log
 
 # move to downloads/install
 pushd ~/Downloads > /dev/null
@@ -55,7 +51,7 @@ confirm curl $tempURL -o cling.tar.bz2 &&\
 confirm bzip2 -d cling.tar.bz2 &&\
 confirm tar -xf cling.tar &&\
 rm -i cling.tar
-confirm sudo mv cling /usr/lib/ &&\
+confirm sudo mv cling* /usr/lib/cling &&\
 confirm sudo update-alternatives --install "/bin/cling" "cling" "/usr/lib/cling/bin/cling" 1
 
 # Python 3 and IDLE
@@ -88,7 +84,7 @@ confirm curl $tempURL -o texmacs.tar.gz &&\
 confirm gunzip texmacs.tar.gz &&\
 confirm tar -xf texmacs.tar &&\
 rm -i texmacs.tar
-confirm sudo mv texmacs /usr/lib/ &&\
+confirm sudo mv texmacs* /usr/lib/texmacs &&\
 confirm sudo cp ./scripts/texmacs.sh /usr/lib/texmacs/ &&\
 confirm sudo chown $USER /usr/lib/texmacs/texmacs.sh &&\
 confirm sudo chmod u+x /usr/lib/texmacs/texmacs.sh &&\
@@ -135,7 +131,7 @@ tempURL="http:/www.famitracker.com/files/FamiTracker-v0.4.6.zip"
 confirm curl $tempURL -o famitracker.zip &&\
 confirm unzip famitracker.zip -d famitracker &&\
 rm -i famitracker.zip
-confirm sudo mv famitracker /usr/lib/
+confirm sudo mv famitracker* /usr/lib/famitracker
 confirm sudo cp ./scripts/famitracker.sh /usr/lib/famitracker/ &&\
 confirm sudo chown $USER /usr/lib/famitracker/famitracker.sh &&\
 confirm sudo chmod u+x /usr/lib/famitracker/famitracker.sh &&\
