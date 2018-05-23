@@ -144,5 +144,8 @@ confirm sudo update-alternatives --install "/bin/famitracker" "famitracker" "/us
 # GNOME Control Center (system settings)
 confirm sudo apt-get install gnome-control-center
 
+# Common Lisp Interpreter
+confirm sudo apt-get install clisp
+
 # exit downloads/install
 popd > /dev/null
