@@ -89,8 +89,8 @@ confirm gunzip texmacs.tar.gz &&\
 confirm tar -xf texmacs.tar &&\
 rm -i texmacs.tar
 confirm sudo mv texmacs /usr/lib/ &&\
-confirm cp ./scripts/texmacs.sh /usr/lib/texmacs &&\
-confirm chmod u+x /usr/lib/texmacs/texmacs.sh &&\
+confirm sudo cp ./scripts/texmacs.sh /usr/lib/texmacs &&\
+confirm sudo chmod u+x /usr/lib/texmacs/texmacs.sh &&\
 confirm sudo update-alternatives --install "/bin/texmacs" "texmacs" "/usr/lib/texmacs/texmacs.sh" 1
 
 # GNOME Tweak Tool
@@ -122,6 +122,9 @@ confirm sudo apt-get install lynx
 
 # Tree viewer for console
 confirm sudo apt-get install tree
+
+# Terminus X-Font
+confirm sudo apt-get install xfonts-terminus
 
 # exit downloads/install
 popd > /dev/null
