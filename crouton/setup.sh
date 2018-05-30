@@ -147,5 +147,8 @@ confirm sudo apt-get install gnome-control-center
 # Common Lisp Interpreter
 confirm sudo apt-get install clisp
 
+# OpenGL, GLUT and GLEW
+confirm sudo apt-get install freeglut3-dev libglew-dev
+
 # exit downloads/install
 popd > /dev/null
