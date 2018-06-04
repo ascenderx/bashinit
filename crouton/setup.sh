@@ -146,5 +146,8 @@ confirm sudo apt-get install clisp
 # OpenGL, GLUT and GLEW
 confirm sudo apt-get install freeglut3-dev libglew-dev
 
+# LibGTK-3 for Developers
+confirm sudo apt-get install libgtk-3-dev libgtk-3-doc
+
 # exit downloads/install
 popd > /dev/null
