@@ -149,5 +149,8 @@ confirm sudo apt-get install freeglut3-dev libglew-dev
 # LibGTK-3 for Developers
 confirm sudo apt-get install libgtk-3-dev libgtk-3-doc
 
+# Zenity (GTK+ GUI dialogs)
+confirm sudo apt-get install zenity
+
 # exit downloads/install
 popd > /dev/null
