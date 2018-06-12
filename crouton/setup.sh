@@ -157,7 +157,8 @@ confirm sudo apt-get install libreadline-dev
 
 # Install Lua
 vernum="5.3.4"
-confirm curl -R -O http://www.lua.org/ftp/lua-$vernum.tar.gz
+tempURL="http://www.lua.org/ftp/lua-$vernum.tar.gz"
+confirm curl -R -O $tempURL
 confirm tar zxf lua-$vernum.tar.gz
 confirm cd lua-$vernum
 confirm make linux test
@@ -166,6 +167,18 @@ confirm sudo mkdir /usr/lib/lua
 confirm sudo mv lua-$vernum /usr/lib/lua/
 confirm sudo update-alternatives --install "/usr/bin/lua" "lua" "/usr/lib/lua/lua-$vernum/bin/lua" 1
 confirm sudo update-alternatives --install "/usr/bin/luac" "luac" "/usr/lib/lua/lua-$vernum/bin/luac" 1
+
+# Install Kotlin
+vernum="1.2.41"
+tempURL="https://github.com/JetBrains/kotlin/releases/download/v$vernum/kotlin-compiler-$vernum.zip"
+confirm curl -R -O $tempURL
+confirm unzip kotlin-compiler-$vernum.zip
+sudo mv kotlinc /usr/lib/
+sudo update-alternatives --install "/usr/bin/kotlin" "kotlin" "/usr/lib/kotlinc/bin/kotlin" 1
+sudo update-alternatives --install "/usr/bin/kotlinc" "kotlinc" "/usr/lib/kotlinc/bin/kotlinc" 1
+sudo update-alternatives --install "/usr/bin/kotlinc-js" "kotlinc-js" "/usr/lib/kotlinc/bin/kotlinc-js" 1
+sudo update-alternatives --install "/usr/bin/kotlinc-jvm" "kotlinc-jvm" "/usr/lib/kotlinc/bin/kotlinc-jvm" 1
+sudo update-alternatives --install "/usr/bin/kotlin-dce-js" "kotlin-dce-js" "/usr/lib/kotlinc/bin/kotlin-dce-js" 1
 
 # exit downloads/install
 popd > /dev/null
