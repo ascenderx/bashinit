@@ -52,7 +52,7 @@ confirm bzip2 -d cling.tar.bz2 &&\
 confirm tar -xf cling.tar &&\
 rm -i cling.tar
 confirm sudo mv cling* /usr/lib/cling &&\
-confirm sudo update-alternatives --install "/bin/cling" "cling" "/usr/lib/cling/bin/cling" 1
+confirm sudo update-alternatives --install "/usr/bin/cling" "cling" "/usr/lib/cling/bin/cling" 1
 
 # Python 3 and IDLE
 confirm sudo apt-get install idle3 python3 python3-pip
@@ -88,7 +88,7 @@ confirm sudo mv texmacs* /usr/lib/texmacs &&\
 confirm sudo cp ./scripts/texmacs.sh /usr/lib/texmacs/ &&\
 confirm sudo chown $USER /usr/lib/texmacs/texmacs.sh &&\
 confirm sudo chmod u+x /usr/lib/texmacs/texmacs.sh &&\
-confirm sudo update-alternatives --install "/bin/texmacs" "texmacs" "/usr/lib/texmacs/texmacs.sh" 1
+confirm sudo update-alternatives --install "/usr/bin/texmacs" "texmacs" "/usr/lib/texmacs/texmacs.sh" 1
 
 # GNOME Tweak Tool
 confirm sudo apt-get install gnome-tweak-tool
@@ -135,7 +135,7 @@ confirm sudo mv famitracker* /usr/lib/famitracker
 confirm sudo cp ./scripts/famitracker.sh /usr/lib/famitracker/ &&\
 confirm sudo chown $USER /usr/lib/famitracker/famitracker.sh &&\
 confirm sudo chmod u+x /usr/lib/famitracker/famitracker.sh &&\
-confirm sudo update-alternatives --install "/bin/famitracker" "famitracker" "/usr/lib/famitracker/famitracker.sh" 1
+confirm sudo update-alternatives --install "/usr/bin/famitracker" "famitracker" "/usr/lib/famitracker/famitracker.sh" 1
 
 # GNOME Control Center (system settings)
 confirm sudo apt-get install gnome-control-center
@@ -154,6 +154,18 @@ confirm sudo apt-get install zenity
 
 # Readline-dev (for building compilers such as Lua)
 confirm sudo apt-get install libreadline-dev
+
+# Install Lua
+vernum="5.3.4"
+confirm curl -R -O http://www.lua.org/ftp/lua-$vernum.tar.gz
+confirm tar zxf lua-$vernum.tar.gz
+confirm cd lua-$vernum
+confirm make linux test
+confirm mv lua-$vernum
+confirm sudo mkdir /usr/lib/lua
+confirm sudo mv lua-$vernum /usr/lib/lua/
+confirm sudo update-alternatives --install "/usr/bin/lua" "lua" "/usr/lib/lua/lua-$vernum/bin/lua" 1
+confirm sudo update-alternatives --install "/usr/bin/luac" "luac" "/usr/lib/lua/lua-$vernum/bin/luac" 1
 
 # exit downloads/install
 popd > /dev/null
