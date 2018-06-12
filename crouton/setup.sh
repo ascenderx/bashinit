@@ -152,5 +152,8 @@ confirm sudo apt-get install libgtk-3-dev libgtk-3-doc
 # Zenity (GTK+ GUI dialogs)
 confirm sudo apt-get install zenity
 
+# Readline-dev (for building compilers such as Lua)
+confirm sudo apt-get install libreadline-dev
+
 # exit downloads/install
 popd > /dev/null
