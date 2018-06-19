@@ -96,3 +96,29 @@ function bin(num)
    ::ret::
    return result
 end -- function bin
+
+-- 
+-- TO HEXADECIMAL
+-- Converts a number to hexadecimal
+--
+function hex(num)
+   return string.format('%x', num)
+end -- function hex
+
+-- 
+-- INT TO ASCII
+-- Converts a number to an ASCII character
+--
+char = string.char
+asc = string.char
+
+-- 
+-- ASCII TO INT
+-- Converts an ASCII character to a number
+--
+byte = string.byte
+ord = string.byte
+function byteh(str) return hex(byte(str)) end
+function byteb(str) return bin(byte(str)) end
+function ordh(str)  return hex(ord(str))  end
+function ordb(str)  return bin(ord(str))  end
