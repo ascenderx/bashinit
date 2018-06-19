@@ -43,3 +43,56 @@ function list_table(table)
    end -- for
 end -- list_table
 
+-- 
+-- EXECUTE SHELL COMMAND
+-- Executes a local OS shell command
+--
+exec = os.execute
+
+-- 
+-- DISPLAY INTEGER DIVISION
+-- Prints the integer quotient and remainder
+--
+function idiv(a, b)
+   writef('%d r%d\n', a // b, a % b)
+end -- function idiv
+
+-- 
+-- TO BINARY
+-- Converts a number to binary
+--
+function bin(num)
+   local digits = {}
+   local temp = tonumber(num)
+   local index = 1
+   local result = ''
+   local negative = false
+   
+   if temp == nil then
+      result = nil
+      goto ret
+   end -- if
+   
+   temp = temp // 1
+   
+   if temp == 0 then
+      result = '0'
+      goto ret
+   elseif temp < 0 then
+      negative = true
+      temp = (math.maxinteger + temp) + 1
+   end -- if
+   
+   while temp > 0 do
+      digits[index] = temp % 2
+      temp = temp // 2
+      index = index + 1
+   end -- while
+   
+   for i = #digits, 1, -1 do
+      result = result .. tostring(digits[i]) 
+   end -- for
+      
+   ::ret::
+   return result
+end -- function bin
