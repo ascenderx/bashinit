@@ -28,9 +28,12 @@ source ~/.bash_colors
 export PS1="$_lyellow\u $_lcyan\W $_lgreen$ $_reset"
 export PS2="$_LGreen --> $_Reset"
 
+# Clear header
+export CLEAR_HEADER="$_LBlue$HOSTNAME $_White$(tty)$_Reset"
+
 # Set clear to \033c
-alias clear='echo -ne "\033c"'
-alias pclear='echo -ne "\033c"; echo -ne "\033[3J"'
+alias clear='echo -ne "\033c$CLEAR_HEADER\n"'
+alias pclear='echo -ne "\033c$CLEAR_HEADER\n"; echo -ne "\033[3J"'
 
 # Lock screen
 alias lock='gnome-screensaver-command -l'

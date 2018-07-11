@@ -29,8 +29,11 @@ source ~/.bash_colors
 export PS1="$_lyellow\u $_lcyan\W $_lgreen$ $_reset"
 export PS2="$_LGreen --> $_Reset"
 
+# Clear header
+export CLEAR_HEADER="$_LBlue$HOSTNAME $_White$(tty)$_Reset"
+
 # Clear scrollback
-alias clear='echo -ne $_Clear'
+alias clear='echo -ne $_Clear$CLEAR_HEADER\n'
 
 # Load other scripts
 source ~/.bash_scripts
