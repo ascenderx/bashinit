@@ -43,5 +43,4 @@ alias setlwd='echo $(pwd) > ~/.lastdir'
 alias getlwd='pushd $(cat ~/.lastdir) >> /dev/null'
 
 ### Commands to run upon terminal execution
-cd ~
 echo -ne "$_LCyan@$_LRed$HOSTNAME$_Reset\n"

@@ -45,6 +45,5 @@ alias xunity="sudo startunity"
 alias xgnome="sudo enter-chroot gnome-session-wrapper gnome-flashback-metacity"
 
 ### Commands to run upon terminal execution
-cd ~
 echo -ne "$_LCyan@$_LRed$HOSTNAME$_Reset\n"
 
