@@ -80,6 +80,8 @@ sudoinst apt install lubuntu-artwork-* xubuntu-artwork xubuntu-wallpapers
 # Icon Themes
 sudoinst apt install tango-icon-theme lubuntu-icon-theme xubuntu-icon-theme
 
+# mint-background, mint-themes, mint-x-icons mint-y-icons
+
 #################################################
 # DEVELOPER SOFTWARE
 #################################################
