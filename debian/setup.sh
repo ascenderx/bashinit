@@ -40,6 +40,7 @@ sudoinst apt update
 
 # Networking
 sudoinst apt install curl wget dnsutils
+sudoinst apt install openssh-server
 
 # NeoFetch CLI Summary/Hello
 sudoinst apt install neofetch
