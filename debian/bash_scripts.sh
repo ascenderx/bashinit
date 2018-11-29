@@ -1,4 +1,6 @@
-#!/bin/bash
+#####################################################################
+# Custom bash aliases functions, etc.
+#####################################################################
 
 # Lua configuration & customized REPL
 touch ~/.config.lua
@@ -28,13 +30,13 @@ git-update() {
 }
 
 # Alternate signout script using signals
-#signout() {
+# signout() {
 #    read -p"Are you sure you want to log out (yes/NO)? " answer
 #    if [[ $answer == "yes" ]]
 #    then
 #        sudo pkill -SIGKILL -u $(whoami)
 #    fi
-#}
+# }
 
 # Logout of XFCE4-Session
 xlogout() {

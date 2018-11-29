@@ -1,5 +1,3 @@
-#!/bin/bash
-
 # Define color variables (prompt)
 _black="\[\033[0;30m\]"
 _dred="\[\033[0;31m\]"
