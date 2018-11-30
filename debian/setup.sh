@@ -70,9 +70,7 @@ sudoinst apt install zip gzip bzip2 tar
 # Terminus Font
 sudoinst apt install xfonts-terminus
 
-# Fira Mono Font
-
-# Anonymous Pro Font
+# Google Fonts: Fira Mono, Anonymous Pro, Inconsolata
 
 # *Ubuntu Artwork & Wallpapers
 sudoinst apt install lubuntu-artwork-* xubuntu-artwork xubuntu-wallpapers
