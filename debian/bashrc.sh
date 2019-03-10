@@ -28,6 +28,8 @@ alias lx="ls -hFx --color=auto --group-directories-first"
 alias ll="ls -hFo --color=auto --group-directories-first"
 alias lr="ls -hFR --color=auto --group-directories-first"
 alias la="ls -AhFo --color=auto --group-directories-first"
+alias l1="ls -hF1 --color=auto --group-directories-first"
+alias l2="ls -AhF1 --color=auto --group-directories-first"
 
 # Set directory colors in "ls" to cyan
 export LS_COLORS=$LS_COLORS:"di=1;36"

@@ -27,6 +27,8 @@ alias lx='ls -FGx'
 alias ll='ls -FGho'
 alias lr='ls -FGR'
 alias la='ls -AhFGo'
+alias l1='ls -FGh1'
+alias l2='ls -AhFG1'
 
 # Set directory colors
 export CLICOLOR=TRUE
