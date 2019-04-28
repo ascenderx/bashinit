@@ -41,7 +41,15 @@ then
 fi
 
 # Custom prompt
-export PS1="$_lyellow\u $_lcyan\W $_lgreen$ $_reset"
+if [[ $EUID == 0 ]]
+then
+    SYMBOL="#"
+    SYMCOLOR=$_lyellow
+else
+    SYMBOL="$"
+    SYMCOLOR=$_lgreen
+fi
+export PS1="$_lyellow\u $_lcyan\W $SYMCOLOR$SYMBOL $_reset"
 export PS2="$_LGreen --> $_Reset"
 
 # Set clear scrollback
