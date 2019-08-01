@@ -6,7 +6,7 @@
 #   + "\e" <=> "\033" <=> "\x1b"
 ##########
 
-# Constrol Sequence Indicator
+# Control Sequence Indicator
 CSI="\e["
 
 # Reset to Initial State
@@ -14,48 +14,58 @@ CSI="\e["
 # + Non-XTerm: Only clear screen
 RIS="\ec"
 
-# Erase In Display ("3" clears entire screen + scrollback buffer)
+# Erase in Display ("3" clears entire screen + scrollback buffer)
 ED="$CSI[3J"
 
 ##########
 # ANSI TTY COLOR CODES
 # Notes:
 #   + Bold colors are often displayed as lighter, hence the dark/light
-#     naming schemes
+#     naming schemes.
 ##########
 
 _DARK=0
 _LIGHT=1
 
-_BLACK=30
-_RED=31
-_GREEN=32
-_YELLOW=33
-_BLUE=34
-_MAGENTA=35
-_CYAN=36
-_WHITE=37
-_DEFAULT=39
+_K="$_DARK;30"
+_R="$_DARK;31"
+_G="$_DARK;32"
+_Y="$_DARK;33"
+_B="$_DARK;34"
+_M="$_DARK;35"
+_C="$_DARK;36"
+_W="$_DARK;37"
+_D="$_DARK;39"
 
-BLACK="$CSI$_DARK;$_BLACK""m"
-RED="$CSI$_DARK;$_RED""m"
-GREEN="$CSI$_DARK;$_GREEN""m"
-YELLOW="$CSI$_DARK;$_YELLOW""m"
-BLUE="$CSI$_DARK;$_BLUE""m"
-MAGENTA="$CSI$_DARK;$_MAGENTA""m"
-CYAN="$CSI$_DARK;$_CYAN""m"
-WHITE="$CSI$_DARK;$_WHITE""m"
-DEFAULT="$CSI$_DARK;$_DEFAULT""m"
+_BK="$_LIGHT;30"
+_BR="$_LIGHT;31"
+_BG="$_LIGHT;32"
+_BY="$_LIGHT;33"
+_BB="$_LIGHT;34"
+_BM="$_LIGHT;35"
+_BC="$_LIGHT;36"
+_BW="$_LIGHT;37"
+_BD="$_LIGHT;39"
 
-BOLD_BLACK="$CSI$_LIGHT;$_BLACK""m"
-BOLD_RED="$CSI$_LIGHT;$_RED""m"
-BOLD_GREEN="$CSI$_LIGHT;$_GREEN""m"
-BOLD_YELLOW="$CSI$_LIGHT;$_YELLOW""m"
-BOLD_BLUE="$CSI$_LIGHT;$_BLUE""m"
-BOLD_MAGENTA="$CSI$_LIGHT;$_MAGENTA""m"
-BOLD_CYAN="$CSI$_LIGHT;$_CYAN""m"
-BOLD_WHITE="$CSI$_LIGHT;$_WHITE""m"
-BOLD_DEFAULT="$CSI$_LIGHT;$_DEFAULT""m"
+BLACK="$CSI$_K""m"
+RED="$CSI$_R""m"
+GREEN="$CSI$_G""m"
+YELLOW="$CSI$_Y""m"
+BLUE="$CSI$_B""m"
+MAGENTA="$CSI$_M""m"
+CYAN="$CSI$_C""m"
+WHITE="$CSI$_W""m"
+DEFAULT="$CSI$_D""m"
+
+B_BLACK="$CSI$_BK""m"
+B_RED="$CSI$_BR""m"
+B_GREEN="$CSI$_BG""m"
+B_YELLOW="$CSI$_BY""m"
+B_BLUE="$CSI$_BB""m"
+B_MAGENTA="$CSI$_BM""m"
+B_CYAN="$CSI$_BC""m"
+B_WHITE="$CSI$_BW""m"
+B_DEFAULT="$CSI$_BD""m"
 
 ##########
 # ANSI TTY FORMATTING CODES
@@ -100,15 +110,15 @@ PS1_C="\[$CYAN\]"
 PS1_W="\[$WHITE\]"
 PS1_D="\[$DEFAULT\]"
 
-PS1_BK="\[$BOLD_BLACK\]"
-PS1_BR="\[$BOLD_RED\]"
-PS1_BG="\[$BOLD_GREEN\]"
-PS1_BY="\[$BOLD_YELLOW\]"
-PS1_BB="\[$BOLD_BLUE\]"
-PS1_BM="\[$BOLD_MAGENTA\]"
-PS1_BC="\[$BOLD_CYAN\]"
-PS1_BW="\[$BOLD_WHITE\]"
-PS1_BD="\[$BOLD_DEFAULT\]"
+PS1_BK="\[$B_BLACK\]"
+PS1_BR="\[$B_RED\]"
+PS1_BG="\[$B_GREEN\]"
+PS1_BY="\[$B_YELLOW\]"
+PS1_BB="\[$B_BLUE\]"
+PS1_BM="\[$B_MAGENTA\]"
+PS1_BC="\[$B_CYAN\]"
+PS1_BW="\[$B_WHITE\]"
+PS1_BD="\[$B_DEFAULT\]"
 
 ##########
 # BASH PROMPT: ANSI TTY FORMATTING CODES
