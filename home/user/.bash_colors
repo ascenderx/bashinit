@@ -1,0 +1,119 @@
+#!/bin/bash
+
+##########
+# ANSI CONTROL CODES
+# Notes:
+#   + "\e" <=> "\033" <=> "\x1b"
+##########
+
+# Constrol Sequence Indicator
+CSI="\e["
+
+# Reset to Initial State
+# + XTerm: Clear screen & scrollback
+# + Non-XTerm: Only clear screen
+RIS="\ec"
+
+# Erase In Display ("3" clears entire screen + scrollback buffer)
+ED="$CSI[3J"
+
+##########
+# ANSI TTY COLOR CODES
+# Notes:
+#   + Bold colors are often displayed as lighter, hence the dark/light
+#     naming schemes
+##########
+
+_DARK=0
+_LIGHT=1
+
+_BLACK=30
+_RED=31
+_GREEN=32
+_YELLOW=33
+_BLUE=34
+_MAGENTA=35
+_CYAN=36
+_WHITE=37
+_DEFAULT=39
+
+BLACK="$CSI$_DARK;$_BLACK""m"
+RED="$CSI$_DARK;$_RED""m"
+GREEN="$CSI$_DARK;$_GREEN""m"
+YELLOW="$CSI$_DARK;$_YELLOW""m"
+BLUE="$CSI$_DARK;$_BLUE""m"
+MAGENTA="$CSI$_DARK;$_MAGENTA""m"
+CYAN="$CSI$_DARK;$_CYAN""m"
+WHITE="$CSI$_DARK;$_WHITE""m"
+DEFAULT="$CSI$_DARK;$_DEFAULT""m"
+
+BOLD_BLACK="$CSI$_LIGHT;$_BLACK""m"
+BOLD_RED="$CSI$_LIGHT;$_RED""m"
+BOLD_GREEN="$CSI$_LIGHT;$_GREEN""m"
+BOLD_YELLOW="$CSI$_LIGHT;$_YELLOW""m"
+BOLD_BLUE="$CSI$_LIGHT;$_BLUE""m"
+BOLD_MAGENTA="$CSI$_LIGHT;$_MAGENTA""m"
+BOLD_CYAN="$CSI$_LIGHT;$_CYAN""m"
+BOLD_WHITE="$CSI$_LIGHT;$_WHITE""m"
+BOLD_DEFAULT="$CSI$_LIGHT;$_DEFAULT""m"
+
+##########
+# ANSI FORMATTING CODES
+##########
+
+_RESET=0
+_UNDERLINE=4
+_BLINK=5
+_INVERT=7
+_CONCEAL=8
+
+RESET="$CSI$_RESET""m"
+UNDERLINE="$CSI$_UNDERLINE""m"
+BLINK="$CSI$_BLINK""m"
+INVERT="$CSI$_INVERT""m"
+CONCEAL="$CSI$_CONCEAL""m"
+
+##########
+# CLEAR WINDOW AND SCROLLBACK
+# Notes:
+# + Clearing on certain terminals can be performed as follows:
+#   - Terminal.app (macOS): Cmd+K
+#   - QTerminal (LXQt): Ctrl+Shift+X
+#   - Crosh (ChromeOS): Ctrl+Shift+K Ctrl+L
+##########
+
+clear() {
+  echo -ne "$RIS$ED"
+}
+
+##########
+# BASH $PS1: ANSI TTY COLOR CODES
+##########
+
+PS1_K="\[$BLACK\]"
+PS1_R="\[$RED\]"
+PS1_G="\[$GREEN\]"
+PS1_Y="\[$YELLOW\]"
+PS1_B="\[$BLUE\]"
+PS1_M="\[$MAGENTA\]"
+PS1_C="\[$CYAN\]"
+PS1_W="\[$WHITE\]"
+PS1_D="\[$DEFAULT\]"
+
+PS1_BK="\[$BOLD_BLACK\]"
+PS1_BR="\[$BOLD_RED\]"
+PS1_BG="\[$BOLD_GREEN\]"
+PS1_BY="\[$BOLD_YELLOW\]"
+PS1_BB="\[$BOLD_BLUE\]"
+PS1_BM="\[$BOLD_MAGENTA\]"
+PS1_BC="\[$BOLD_CYAN\]"
+PS1_BW="\[$BOLD_WHITE\]"
+PS1_BD="\[$BOLD_DEFAULT\]"
+
+##########
+# BASH $PS1: ANSI FORMATTING CODES
+##########
+
+PS1_U="\[$UNDERLINE\]"
+PS1_L="\[$BLINK\]"
+PS1_I="\[$INVERT\]"
