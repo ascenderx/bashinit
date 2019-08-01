@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ##########
-# ANSI CONTROL CODES
+# ANSI TTY CONTROL CODES
 # Notes:
 #   + "\e" <=> "\033" <=> "\x1b"
 ##########
@@ -58,7 +58,7 @@ BOLD_WHITE="$CSI$_LIGHT;$_WHITE""m"
 BOLD_DEFAULT="$CSI$_LIGHT;$_DEFAULT""m"
 
 ##########
-# ANSI FORMATTING CODES
+# ANSI TTY FORMATTING CODES
 ##########
 
 _RESET=0
@@ -74,7 +74,7 @@ INVERT="$CSI$_INVERT""m"
 CONCEAL="$CSI$_CONCEAL""m"
 
 ##########
-# CLEAR WINDOW AND SCROLLBACK
+# CLEAR TTY WINDOW AND SCROLLBACK
 # Notes:
 # + Clearing on certain terminals can be performed as follows:
 #   - Terminal.app (macOS): Cmd+K
@@ -111,7 +111,7 @@ PS1_BW="\[$BOLD_WHITE\]"
 PS1_BD="\[$BOLD_DEFAULT\]"
 
 ##########
-# BASH $PS1: ANSI FORMATTING CODES
+# BASH $PS1: ANSI TTY FORMATTING CODES
 ##########
 
 PS1_U="\[$UNDERLINE\]"
