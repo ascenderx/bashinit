@@ -1,4 +1,0 @@
-/* remember to run `xrdb -merge ~/.Xresources` */
-xterm*font: *-terminus-*-*-*-16-*
-xterm*boldFont: *-terminus-*-*-*-16-*
-XTerm*allowBoldFonts: false
