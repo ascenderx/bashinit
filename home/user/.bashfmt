@@ -87,7 +87,7 @@ clear() {
 }
 
 ##########
-# BASH $PS1: ANSI TTY COLOR CODES
+# BASH PROMPT: ANSI TTY COLOR CODES
 ##########
 
 PS1_K="\[$BLACK\]"
@@ -111,7 +111,7 @@ PS1_BW="\[$BOLD_WHITE\]"
 PS1_BD="\[$BOLD_DEFAULT\]"
 
 ##########
-# BASH $PS1: ANSI TTY FORMATTING CODES
+# BASH PROMPT: ANSI TTY FORMATTING CODES
 ##########
 
 PS1_U="\[$UNDERLINE\]"
