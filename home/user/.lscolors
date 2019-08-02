@@ -45,4 +45,4 @@ COLOR_LIST=( \
 ##########
 
 # Compile the colors
-LS_COLORS=$( for c in ${COLOR_LIST[@]}; do echo -n "$c:"; done )
+export LS_COLORS=$( for c in ${COLOR_LIST[@]}; do echo -n "$c:"; done )
