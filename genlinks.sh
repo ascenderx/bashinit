@@ -2,8 +2,8 @@
 
 # Generate links for the files in ./home/user/
 echo "Generating links..."
-pushd home/user 2> /dev/null
-for $f in .*
+pushd home/user > /dev/null
+for f in *
 do
   if [[ -f $f ]]
   then
@@ -11,4 +11,4 @@ do
     cp $f ~/.$f
   fi
 done
-popd 2> /dev/null
+popd > /dev/null
