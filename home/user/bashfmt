@@ -7,12 +7,12 @@
 ##########
 
 # Control Sequence Indicator
-CSI="\e["
+CSI="\x1b["
 
 # Reset to Initial State
 # + XTerm: Clear screen & scrollback
 # + Non-XTerm: Only clear screen
-RIS="\ec"
+RIS="\x1bc"
 
 # Erase in Display ("3" clears entire screen + scrollback buffer)
 ED="$CSI""3J"
