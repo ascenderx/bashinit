@@ -12,10 +12,10 @@
 source ~/.bashfmt
 
 # Set the colors here based on the table below.
-COLOR_LIST=( \
-  "fi=$_D" \
-  "di=$_BC" \
-  "ln=$_BY" \
+declare -A COLOR_LIST=( \
+  [fi]=$_D \
+  [di]=$_BC \
+  [ln]=$_BY \
 )
 
 ##########
@@ -46,9 +46,10 @@ COLOR_LIST=( \
 ##########
 
 function _compile_ls_colors {
-  for c in ${COLOR_LIST[@]}
+  for k in ${!COLOR_LIST[@]}
   do
-    echo -n "$c:"
+    v=${COLOR_LIST[$k]}
+    echo -n "$k=$v:"
   done
 }
 
