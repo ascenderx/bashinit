@@ -17,11 +17,6 @@ nhfork {
   nohup $* > /dev/null 2>&1 &
 }
 
-# Crouton XIWI (inside chroot): create new ChromeOS tab with app.
-#cr-gui {
-#  xiwi $* &> /dev/null &
-#}
-
 # CLI mode (e.g. Raspberry Pi minimal): check battery
 battery {
   upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep -B1 percentage
@@ -42,3 +37,8 @@ battery {
 
 # Boot Crouton distro in XIWI tab.
 #alias gnuw="sudo $DESKENV -X xiwi"
+
+# Inside chroot: create new ChromeOS tab with app.
+#cr-gui {
+#  xiwi $* &> /dev/null &
+#}
