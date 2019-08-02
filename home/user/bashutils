@@ -26,3 +26,19 @@ nhfork {
 battery {
   upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep -B1 percentage
 }
+
+##########
+# Crosh scripts for launching Crouton.
+##########
+
+#DISTRO="stretch"
+#DESKENV="startxfce4"
+
+# Boot Crouton distro in terminal/CLI mode.
+#alias gnu="sudo enter-chroot -n $DISTRO"
+
+# Boot Crouton distro in full GUI mode.
+#alias gnux="sudo $DESKENV"
+
+# Boot Crouton distro in XIWI tab.
+#alias gnuw="sudo $DESKENV -X xiwi"
