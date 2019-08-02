@@ -8,7 +8,7 @@ do
   if [[ -f $f ]]
   then
     echo ":: $f -> $HOME/.$f"
-    cp $f ~/.$f
+    ln -s $(pwd)/$f ~/.$f
   fi
 done
 popd > /dev/null
