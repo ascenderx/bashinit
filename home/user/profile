@@ -1,0 +1,5 @@
+#!/bin/sh
+
+##########
+# This is intended for POSIX/Bourne shells (sh) as well for Bash shells.
+##########
