@@ -6,7 +6,7 @@
 ##########
 
 # Import POSIX-shell (sh) configurations, including any $PATH additions.
-source .profile
+source ~/.profile
 
 # If we're not in an interactive shell, then quit here.
 case $- in
@@ -19,7 +19,7 @@ esac
 ##########
 
 # Import variables ANSI TTY formatting colors and codes.
-source .bashfmt
+source ~/.bashfmt
 
 # Query the user for all multiple-file operations.
 # This should help prevent accidental deletions (rm).
@@ -45,8 +45,8 @@ COLOR_OPT="--color=auto"
 GROUP_OPT="--group-directories-first"
 
 # Import file and folder colors.
-source .lscolors-linux
-#source .lscolors-bsd
+source ~/.lscolors-linux
+#source ~/.lscolors-bsd
 
 # MULTI-COLUMN MODE
 

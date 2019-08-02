@@ -8,4 +8,4 @@
 # import .bashrc which will then check if it's read in an interactive shell.
 ##########
 
-source .bashrc
+source ~/.bashrc

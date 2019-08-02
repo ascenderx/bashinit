@@ -8,7 +8,7 @@
 ##########
 
 # Import ANSI TTY formatting colors and codes.
-source .bashfmt
+source ~/.bashfmt
 
 # Set the colors here based on the table below.
 COLOR_LIST=( \
