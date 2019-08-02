@@ -12,6 +12,7 @@
 source ~/.bashfmt
 
 # Set the colors here based on the table below.
+# Defaults are used for unset entries.
 declare -A COLOR_LIST=( \
   [fi]=$_D \
   [di]=$_BC \
@@ -20,7 +21,7 @@ declare -A COLOR_LIST=( \
 
 ##########
 # FILE/ENTRY KEY TABLE
-# What each key (left-hand of the equal-sign) means in LS_COLORS.
+# What each key means in $LS_COLORS.
 #
 # fi  Normal file
 # di  Directory

@@ -29,3 +29,56 @@ BSD_BM="F"
 BSD_BC="G"
 BSD_BW="H"
 BSD_D="x"
+
+# Set the colors here based on the table below.
+# Each entry has a foreground and a background color, set in that order.
+# All the entries must be set.
+declare -A COLOR_LIST=( \
+  [di]="$BSD_C$BSD_D" \
+  [ln]="$BSD_Y$BSD_D" \
+  [so]="$BSD_G$BSD_D" \
+  [pi]="$BSD_Y$BSD_D" \
+  [ex]="$BSD_G$BSD_D" \
+  [bd]="$BSD_Y$BSD_D" \
+  [cd]="$BSD_Y$BSD_D" \
+  [su]="$BSD_BW$BSD_R" \
+  [sg]="$BSD_BW$BSD_R" \
+  [tw]="$BSD_K$BSD_G" \
+  [ow]="$BSD_K$BSD_G" \
+)
+
+##########
+# FILE/ENTRY KEY TABLE
+# What each key means in $COLOR_LIST.
+# Notes:
+#   + The keys are assigned in the following order.
+#
+# di  Directory
+# ln  Symbolic link
+# so  Socket
+# pi  Named pipe
+# ex  Executable file (+x)
+# bd  Block device
+# cd  Character device
+# su  Executable file with setuid (u+s)
+# sg  Executable file with setgid (g+s)
+# tw  Directory that is sticky and other-writable (+t,o+w)
+# ow  Directory that is non-sticky and other-writable (o+w)
+##########
+
+function _compile_ls_colors {
+  echo -n ${COLOR_LIST[di]}
+  echo -n ${COLOR_LIST[ln]}
+  echo -n ${COLOR_LIST[so]}
+  echo -n ${COLOR_LIST[pi]}
+  echo -n ${COLOR_LIST[ex]}
+  echo -n ${COLOR_LIST[bd]}
+  echo -n ${COLOR_LIST[cd]}
+  echo -n ${COLOR_LIST[su]}
+  echo -n ${COLOR_LIST[sg]}
+  echo -n ${COLOR_LIST[tw]}
+  echo -n ${COLOR_LIST[ow]}
+}
+
+# Compile the colors
+export LSCOLORS=$(_compile_ls_colors)
