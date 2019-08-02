@@ -83,5 +83,31 @@ alias lssh="ls -dF1 $COLOR_OPT $GROUP_OPT .*"
 ##########
 # TERMINAL SETTINGS
 ##########
-PS1="$PS1_BY\u $PS1_BC\W $PS1_BG\$ $PS1_X"
 
+# Set terminal prompt character based on root status ($ vs #).
+if [[ $EUID == 0 ]]
+then
+  PS1_SYM="#"
+  PS1_SYM_COL=$PS1_BY
+else
+  PS1_SYM="$"
+  PS1_SYM_COL=$PS1_BG
+fi
+
+# Terminal prompt
+PS1="$PS1_BY\u $PS1_BC\W $PS1_SYM_COL$PS1_SYM $PS1_X"
+
+# Bash history size settings
+export HISTSIZE=1000
+export HISTFILESIZE=2000
+
+# Don't put duplicate lines or lines starting with space in history.
+export HISTCONTROL=ignoreboth
+
+# Check the window size after each command, and, if necessary, update the
+# values of LINES and COLUMNS.
+shopt -s checkwinsize
+
+# The pattern "**" used in a pathname expansion context will match all files
+# and zero or more directories and subdirectories.
+shopt -s globstar
