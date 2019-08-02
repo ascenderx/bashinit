@@ -128,30 +128,3 @@ PS1_U="\[$UNDERLINE\]"
 PS1_L="\[$BLINK\]"
 PS1_I="\[$INVERT\]"
 PS1_X="\[$RESET\]"
-
-##########
-# BSD AND MACOS LSCOLOR COLDES
-##########
-
-case $(uname -s) in
-  *Darwin*) ;&
-  *BSD*)
-    BSD_K="a"
-    BSD_R="b"
-    BSD_G="c"
-    BSD_Y="d"
-    BSD_B="e"
-    BSD_M="f"
-    BSD_C="g"
-    BSD_W="h"
-    BSD_BK="A"
-    BSD_BR="B"
-    BSD_BG="C"
-    BSD_BY="D"
-    BSD_BB="E"
-    BSD_BM="F"
-    BSD_BC="G"
-    BSD_BW="H"
-    BSD_D="x"
-    ;;
-esac
