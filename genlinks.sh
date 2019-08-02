@@ -26,6 +26,7 @@ FILES=( \
 for f in ${FILES[@]}
 do
   LINK="$HOME/.$f"
+  TARGET="$PWD/home/user/$f"
   
   # Check to see if link/file already exists.
   if [[ -L $LINK ]] || [[ -f $LINK ]] 
@@ -46,6 +47,6 @@ do
   fi
   
   # Generate the symbolic link.
-  echo ":: $PWD/$f -> $LINK"
-  ln -s $PWD/$f $LINK
+  echo ":: $TARGET -> $LINK"
+  ln -s $TARGET $LINK
 done
