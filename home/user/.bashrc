@@ -45,7 +45,7 @@ COLOR_OPT="--color=auto"
 GROUP_OPT="--group-directories-first"
 
 # Import file and folder colors.
-source .dircolors
+source .lscolors
 
 # MULTI-COLUMN MODE
 

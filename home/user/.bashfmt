@@ -92,7 +92,7 @@ CONCEAL="$CSI$_CONCEAL""m"
 #   - Crosh (ChromeOS): Ctrl+Shift+K Ctrl+L
 ##########
 
-clear() {
+function clear {
   echo -ne "$RIS$ED"
 }
 
