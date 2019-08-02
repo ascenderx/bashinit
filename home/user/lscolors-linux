@@ -44,5 +44,12 @@ COLOR_LIST=( \
 # You can also assign custom file extensions, such as "*.jpg=$_BM".
 ##########
 
+function _compile_ls_colors {
+  for c in ${COLOR_LIST[@]}
+  do
+    echo -n "$c:"
+  done
+}
+
 # Compile the colors
-export LS_COLORS=$( for c in ${COLOR_LIST[@]}; do echo -n "$c:"; done )
+export LS_COLORS=$(_compile_ls_colors)
