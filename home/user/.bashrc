@@ -79,3 +79,9 @@ alias lssa="ls -AF1 $COLOR_OPT $GROUP_OPT"
 
 # Display only hidden files and folders.
 alias lssh="ls -dF1 $COLOR_OPT $GROUP_OPT .*"
+
+##########
+# TERMINAL SETTINGS
+##########
+PS1="$PS1_BY\u $PS1_BC\W $PS1_BG\$ $PS1_X"
+
