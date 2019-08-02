@@ -15,7 +15,7 @@ CSI="\e["
 RIS="\ec"
 
 # Erase in Display ("3" clears entire screen + scrollback buffer)
-ED="$CSI3J"
+ED="$CSI""3J"
 
 ##########
 # ANSI TTY COLOR CODES
