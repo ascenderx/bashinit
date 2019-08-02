@@ -1,6 +1,7 @@
 #!/bin/bash
 
 ##########
+# This file is intended for GNU/Linux and variants.
 # This will set the colors of files, folders, &c when calling `ls`.
 # The full list of currently set LS_COLORS can be found by running:
 #

@@ -1,3 +1,11 @@
 #!/bin/bash
 
+##########
+# This file is intended for BSD and variants, including macOS.
+# This will set the colors of files, folders, &c when calling `ls`.
+# The full list of currently set LSCOLORS can be found by running:
+#
+# echo $LSCOLORS
+##########
 
+source ~/.bashfmt
