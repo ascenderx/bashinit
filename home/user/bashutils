@@ -4,6 +4,16 @@
 # This file is intended for custom scripts to run on each terminal session load.
 ##########
 
+# Import user scripts.
+USER_SCRIPTS="$HOME/.bashscripts"
+if [[ -e $USER_SCRIPTS ]] && [[ -d $USER_SCRIPTS ]]
+then
+  for f in $USER_SCRIPTS
+  do
+    source $f
+  done
+fi
+
 # Set Lynx homepage to DuckDuckGo Lite.
 export WWW_HOME="https://ddg.gg/lite"
 
