@@ -9,7 +9,7 @@ USER_SCRIPTS="$HOME/.bashscripts"
 if [[ -e $USER_SCRIPTS ]] && [[ -d $USER_SCRIPTS ]]
 then
   pushd $USER_SCRIPTS > /dev/null
-  for f in *
+  for f in $(/usr/bin/env ls -A1)
   do
     source $USER_SCRIPTS/$f
   done
