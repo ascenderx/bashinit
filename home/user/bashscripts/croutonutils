@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 ##########
 # This file is intended for the ChromeOS/Crosh side of Crouton.
