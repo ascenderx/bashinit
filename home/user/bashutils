@@ -1,44 +1,28 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 ##########
 # This file is intended for custom scripts to run on each terminal session load.
 ##########
 
-# Set Lynx homepage to DuckDuckGo Lite.
-export WWW_HOME="https://ddg.gg/lite"
+# Import user scripts.
+USER_SCRIPTS="$HOME/.bashscripts"
+if [[ -e $USER_SCRIPTS ]] && [[ -d $USER_SCRIPTS ]]
+then
+  pushd $USER_SCRIPTS > /dev/null
+  for f in $(/usr/bin/env ls -A1)
+  do
+    source $USER_SCRIPTS/$f
+  done
+  popd > /dev/null
+fi
 
 # Fork a specified process and suppress stderr.
-fork {
+function fork {
   $* 2> /dev/null &
 }
 
 # Fork a process and ignore SIGHUP.
-nhfork {
+function nhfork {
   nohup $* > /dev/null 2>&1 &
 }
 
-# CLI mode (e.g. Raspberry Pi minimal): check battery
-battery {
-  upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep -B1 percentage
-}
-
-##########
-# Crosh scripts for launching Crouton.
-##########
-
-#DISTRO="stretch"
-#DESKENV="startxfce4"
-
-# Boot Crouton distro in terminal/CLI mode.
-#alias gnu="sudo enter-chroot -n $DISTRO"
-
-# Boot Crouton distro in full GUI mode.
-#alias gnux="sudo $DESKENV"
-
-# Boot Crouton distro in XIWI tab.
-#alias gnuw="sudo $DESKENV -X xiwi"
-
-# Inside chroot: create new ChromeOS tab with app.
-#cr-gui {
-#  xiwi $* &> /dev/null &
-#}

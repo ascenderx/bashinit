@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 ##########
 # This file is meant for non-login Bash shells (most terminal windows on the
@@ -41,12 +41,23 @@ alias fgrep="fgrep --color"
 # See `ls --help` or `man ls` for more details.
 ##########
 
-COLOR_OPT="--color=auto"
-GROUP_OPT="--group-directories-first"
+case $(uname -s) in
+  *Linux*)
+    COLOR_OPT="--color=auto"
+    GROUP_OPT="--group-directories-first"
+  ;;
+  *Darwin*)
+    COLOR_OPT="-G"
+    GROUP_OPT=
+  ;;
+esac
 
 # Import file and folder colors.
-source ~/.lscolors-linux
-#source ~/.lscolors-bsd
+case $(uname -s) in
+  *Linux*) source ~/.lscolors-linux ;;
+  *Darwin*) source ~/.lscolors-bsd ;;
+  *BSD*) source ~/.lscolors-bsd ;;
+esac
 
 # MULTI-COLUMN MODE
 
@@ -111,7 +122,16 @@ shopt -s checkwinsize
 
 # The pattern "**" used in a pathname expansion context will match all files
 # and zero or more directories and subdirectories.
-shopt -s globstar
+case $(uname -s) in
+  *Linux*) shopt -s globstar ;;
+esac
 
 # Append to the history file; don't overwrite it.
 shopt -s histappend
+
+# Import bash utils (and, by extension, user scripts)
+if [[ -f ~/.bashutils ]]
+then
+  source ~/.bashutils
+fi
+
