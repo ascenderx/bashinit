@@ -28,33 +28,11 @@ function nhfork {
 }
 
 # CLI mode (e.g. Raspberry Pi minimal): check battery
-function battery {
-  upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep -B1 percentage
-}
+case $(uname -s) in
+  *Linux*)
+    function battery {
+      upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep -B1 percentage
+    }
+  ;;
+esac
 
-##########
-# Crosh scripts for launching Crouton.
-##########
-
-#DISTRO="stretch"
-#DESKENV="startxfce4"
-
-# Boot Crouton distro in terminal/CLI mode.
-#function gnu {
-#  sudo enter-chroot -n $DISTRO
-#}
-
-# Boot Crouton distro in full GUI mode.
-#function gnux {
-#  sudo $DESKENV -X xorg
-#}
-
-# Boot Crouton distro in XIWI tab.
-#function gnuw {
-#  sudo $DESKENV -X xiwi
-#}
-
-# Inside chroot: create new ChromeOS tab with app.
-#function cr-gui {
-#  xiwi $* &> /dev/null &
-#}
