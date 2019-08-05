@@ -8,17 +8,17 @@
 export WWW_HOME="https://ddg.gg/lite"
 
 # Fork a specified process and suppress stderr.
-fork {
+function fork {
   $* 2> /dev/null &
 }
 
 # Fork a process and ignore SIGHUP.
-nhfork {
+function nhfork {
   nohup $* > /dev/null 2>&1 &
 }
 
 # CLI mode (e.g. Raspberry Pi minimal): check battery
-battery {
+function battery {
   upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep -B1 percentage
 }
 
@@ -30,15 +30,21 @@ battery {
 #DESKENV="startxfce4"
 
 # Boot Crouton distro in terminal/CLI mode.
-#alias gnu="sudo enter-chroot -n $DISTRO"
+#function gnu {
+#  sudo enter-chroot -n $DISTRO
+#}
 
 # Boot Crouton distro in full GUI mode.
-#alias gnux="sudo $DESKENV"
+#function gnux {
+#  sudo $DESKENV -X xorg
+#}
 
 # Boot Crouton distro in XIWI tab.
-#alias gnuw="sudo $DESKENV -X xiwi"
+#function gnuw {
+#  sudo $DESKENV -X xiwi
+#}
 
 # Inside chroot: create new ChromeOS tab with app.
-#cr-gui {
+#function cr-gui {
 #  xiwi $* &> /dev/null &
 #}
