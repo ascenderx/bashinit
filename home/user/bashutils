@@ -8,9 +8,9 @@
 USER_SCRIPTS="$HOME/.bashscripts"
 if [[ -e $USER_SCRIPTS ]] && [[ -d $USER_SCRIPTS ]]
 then
-  for f in $USER_SCRIPTS
+  for f in $(ls -A1 $USER_SCRIPTS)
   do
-    source $f
+    source $USER_SCRIPTS/$f
   done
 fi
 

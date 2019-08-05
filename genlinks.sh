@@ -37,7 +37,7 @@ do
       echo -n "Replace $LINK? [y/N] "
       read val
       case $val in
-        *y*) ;&
+        *y*) ;;
         *Y*) ;;
         *) continue ;;
       esac
