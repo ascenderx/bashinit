@@ -16,7 +16,7 @@ FILES=( \
   "bashrc" \
   "bashutils" \
   "lscolors-linux" \
-#  "lscolors-bsd" \
+  "lscolors-bsd" \
   "profile" \
   "vimrc" \
   "Xresources" \
