@@ -8,10 +8,12 @@
 USER_SCRIPTS="$HOME/.bashscripts"
 if [[ -e $USER_SCRIPTS ]] && [[ -d $USER_SCRIPTS ]]
 then
-  for f in $(ls -A1 $USER_SCRIPTS)
+  pushd $USER_SCRIPTS > /dev/null
+  for f in *
   do
     source $USER_SCRIPTS/$f
   done
+  popd > /dev/null
 fi
 
 # Set Lynx homepage to DuckDuckGo Lite.
