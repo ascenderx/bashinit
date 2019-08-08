@@ -60,3 +60,6 @@ function _compile_ls_colors {
 
 # Compile the colors
 export LS_COLORS=$(_compile_ls_colors)
+
+unset COLOR_LIST
+unset _compile_ls_colors

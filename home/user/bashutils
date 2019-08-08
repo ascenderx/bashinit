@@ -15,6 +15,7 @@ then
   done
   popd > /dev/null
 fi
+unset USER_SCRIPTS
 
 # Fork a specified process and suppress stderr.
 function fork {
