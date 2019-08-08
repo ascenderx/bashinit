@@ -3,6 +3,8 @@
 ##########
 # This file is meant for non-login Bash shells (most terminal windows on the
 # desktop).
+#
+# For more aliases, options, commands, &c., consult your distro's default bashrc file.
 ##########
 
 # Import POSIX-shell (sh) configurations, including any $PATH additions.
@@ -191,6 +193,12 @@ esac
 
 # Append to the history file; don't overwrite it.
 shopt -s histappend
+
+# Store multi-line command as a single command.
+shopt -s cmdhist
+
+# Expand aliases.
+shopt -s expand_aliases
 
 # Import bash utils (and, by extension, user scripts)
 if [[ -f ~/.bashutils ]]
