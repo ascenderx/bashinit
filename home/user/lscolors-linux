@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 
 ##########
+# NOTE: THE FILE dircolors SHOULD BE USED INSTEAD OF THIS FILE WHEN POSSIBLE.
+##########
+
+##########
 # This file is intended for GNU/Linux and variants.
 # This will set the colors of files, folders, &c when calling `ls`.
 # The full list of currently set LS_COLORS can be found by running:

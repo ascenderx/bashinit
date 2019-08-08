@@ -87,18 +87,21 @@ case $(uname -s) in
   *Linux*) 
     if [[ -f ~/.dircolors ]]
     then
-      LS_COLORS=$(dircolors ~/.dircolors)
-    fi ;;
+      eval $(dircolors ~/.dircolors)
+    fi
+  ;;
   *Darwin*) 
     if [[ -f ~/.lscolors-bsd ]]
     then
       source ~/.lscolors-bsd
-    fi ;;
+    fi
+  ;;
   *BSD*) 
     if [[ -f ~/.lscolors-bsd ]]
     then
       source ~/.lscolors-bsd
-    fi ;;
+    fi
+  ;;
 esac
 
 # MULTI-COLUMN MODE
