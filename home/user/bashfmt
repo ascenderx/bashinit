@@ -93,7 +93,16 @@ CONCEAL="$CSI$_CONCEAL""m"
 ##########
 
 function clear {
-  echo -ne "$RIS$ED"
+  # If forced...
+  if [[ $1 == "-f" ]]
+  then
+    # Clear scrollback as well
+    echo -ne "$RIS$ED"
+  # If not forced...
+  else
+    # Do not clear scrollback
+    echo -ne "$RIS"
+  fi
 }
 
 ##########
