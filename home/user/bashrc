@@ -6,7 +6,10 @@
 ##########
 
 # Import POSIX-shell (sh) configurations, including any $PATH additions.
-source ~/.profile
+if [[ -f ~/.profile ]]
+then
+  source ~/.profile
+fi
 
 # If we're not in an interactive shell, then quit here.
 case $- in
@@ -19,22 +22,49 @@ esac
 ##########
 
 # Import variables ANSI TTY formatting colors and codes.
-source ~/.bashfmt
+if [[ -f ~/.bashfmt ]]
+then
+  source ~/.bashfmt
+fi
 
 # Query the user for all multiple-file operations.
 # This should help prevent accidental deletions (rm).
-alias rm="rm -i"
-alias cp="cp -i"
-alias mv="mv -i"
+
+function rm {
+  /usr/bin/env rm -i $*
+}
+
+function cp {
+  /usr/bin/env cp -i $*
+}
+
+function mv {
+  /usr/bin/env mv -i $*
+}
 
 # Use human-readable file sizes when checking free space, disk lists, etc.
-alias df="df -h"
-alias du="du -h"
+
+function df {
+  /usr/bin/env df -h $*
+}
+
+function du {
+  /usr/bin/env du -h $*
+}
 
 # Display regex searches in color.
-alias grep="grep --color"
-alias egrep="egrep --color"
-alias fgrep="fgrep --color"
+
+function grep {
+  /usr/bin/env grep --color $*
+}
+
+function egrep {
+  /usr/bin/env egrep --color $*
+}
+
+function fgrep {
+  /usr/bin/env fgrep --color $*
+}
 
 ##########
 # ALIASES FOR LISTING DIRECTORIES
@@ -54,43 +84,73 @@ esac
 
 # Import file and folder colors.
 case $(uname -s) in
-  *Linux*) source ~/.lscolors-linux ;;
-  *Darwin*) source ~/.lscolors-bsd ;;
-  *BSD*) source ~/.lscolors-bsd ;;
+  *Linux*) 
+    if [[ -f ~/.dircolors ]]
+    then
+      LS_COLORS=$(dircolors ~/.dircolors)
+    fi ;;
+  *Darwin*) 
+    if [[ -f ~/.lscolors-bsd ]]
+    then
+      source ~/.lscolors-bsd
+    fi ;;
+  *BSD*) 
+    if [[ -f ~/.lscolors-bsd ]]
+    then
+      source ~/.lscolors-bsd
+    fi ;;
 esac
 
 # MULTI-COLUMN MODE
 
 # Display only visible files and folders by default.
-alias ls="ls -Fx $COLOR_OPT $GROUP_OPT"
+function ls {
+  /usr/bin/env ls -Fx $COLOR_OPT $GROUP_OPT $1
+}
 
 # Display all files and folders (including hidden ones).
-alias lsa="ls -AFx $COLOR_OPT $GROUP_OPT"
+function lsa {
+  /usr/bin/env ls -AFx $COLOR_OPT $GROUP_OPT $1
+}
 
 # Display only hidden files and folders.
-alias lsh="ls -dFx $COLOR_OPT $GROUP_OPT .*"
+function lsh {
+  /usr/bin/env ls -dFx $COLOR_OPT $GROUP_OPT $1/.*
+}
 
 # ATTRIBUTE-LIST MODE
 
 # Display only visible files and folders.
-alias lsl="ls -Fho $COLOR_OPT $GROUP_OPT"
+function lsl {
+  /usr/bin/env ls -Fho $COLOR_OPT $GROUP_OPT $1
+}
 
 # Display all files and folders.
-alias lsla="ls -AFho $COLOR_OPT $GROUP_OPT"
+function lsla {
+  /usr/bin/env ls -AFho $COLOR_OPT $GROUP_OPT $1
+}
 
 # Display only hidden files and folders.
-alias lslh="ls -dFho $COLOR_OPT $GROUP_OPT .*"
+function lslh {
+  /usr/bin/env ls -dFho $COLOR_OPT $GROUP_OPT $1/.*
+}
 
 # SINGLE-COLUMN MODE
 
 # Display only visible files and folders.
-alias lss="ls -F1 $COLOR_OPT $GROUP_OPT"
+function lss {
+  /usr/bin/env ls -F1 $COLOR_OPT $GROUP_OPT $1
+}
 
 # Display all files and folders.
-alias lssa="ls -AF1 $COLOR_OPT $GROUP_OPT"
+function lssa {
+  /usr/bin/env ls -AF1 $COLOR_OPT $GROUP_OPT $1
+}
 
 # Display only hidden files and folders.
-alias lssh="ls -dF1 $COLOR_OPT $GROUP_OPT .*"
+function lssh {
+  /usr/bin/env ls -dF1 $COLOR_OPT $GROUP_OPT $1/.*
+}
 
 ##########
 # TERMINAL SETTINGS
