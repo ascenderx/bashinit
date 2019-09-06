@@ -110,7 +110,7 @@ esac
 
 # Display only visible files and folders by default.
 function ls {
-  /usr/bin/env ls -Fx $COLOR_OPT $GROUP_OPT $1
+  /usr/bin/env ls -Fx $COLOR_OPT $GROUP_OPT $*
 }
 
 # Display all files and folders (including hidden ones).
@@ -120,7 +120,12 @@ function lsa {
 
 # Display only hidden files and folders.
 function lsh {
-  /usr/bin/env ls -dFx $COLOR_OPT $GROUP_OPT $1/.*
+  ARG="$1/.*"
+  if [[ -z $1 ]]
+  then
+    ARG=".*"
+  fi
+  /usr/bin/env ls -AdFx $COLOR_OPT $GROUP_OPT $ARG
 }
 
 # ATTRIBUTE-LIST MODE
@@ -137,7 +142,12 @@ function lsla {
 
 # Display only hidden files and folders.
 function lslh {
-  /usr/bin/env ls -dFho $COLOR_OPT $GROUP_OPT $1/.*
+  ARG="$1/.*"
+  if [[ -z $1 ]]
+  then
+    ARG=".*"
+  fi
+  /usr/bin/env ls -AdFho $COLOR_OPT $GROUP_OPT $ARG
 }
 
 # SINGLE-COLUMN MODE
@@ -154,7 +164,12 @@ function lssa {
 
 # Display only hidden files and folders.
 function lssh {
-  /usr/bin/env ls -dF1 $COLOR_OPT $GROUP_OPT $1/.*
+  ARG="$1/.*"
+  if [[ -z $1 ]]
+  then
+    ARG=".*"
+  fi
+  /usr/bin/env ls -AdF1 $COLOR_OPT $GROUP_OPT $ARG
 }
 
 ##########
