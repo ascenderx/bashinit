@@ -93,7 +93,7 @@ CONCEAL="$CSI$_CONCEAL""m"
 ##########
 
 function clearf {
-  echo -ne "$RIS$ID"
+  echo -ne "$RIS$ED"
 }
 
 #function clear {
