@@ -92,18 +92,33 @@ CONCEAL="$CSI$_CONCEAL""m"
 #   - Crosh (ChromeOS): Ctrl+Shift+K Ctrl+L
 ##########
 
-function clear {
-  # If forced...
-  if [[ $1 == "-f" ]]
-  then
-    # Clear scrollback as well
-    echo -ne "$RIS$ED"
-  # If not forced...
-  else
-    # Do not clear scrollback
-    echo -ne "$RIS"
-  fi
-}
+#function clear {
+#  FORCED=
+#
+#  for ARG in "$@"
+#  do
+#    case $ARG in
+#      "-f")
+#        FORCED=1
+#        ;;
+#      *)
+#        echo "Invalid argument \"$ARG\""
+#        return
+#        ;;
+#    esac
+#  done
+#
+#  # If forced...
+#  if [[ ! -z $FORCED ]]
+#  then
+#    # Clear scrollback as well
+#    echo -ne "$RIS$ED"
+#  # If not forced...
+#  else
+#    # Do not clear scrollback
+#    echo -ne "$RIS"
+#  fi
+#}
 
 ##########
 # BASH PROMPT: ANSI TTY COLOR CODES
