@@ -27,11 +27,13 @@ function cr-gui {
   xiwi $* &> /dev/null &
 }
 
-# Disable keyboard in XOrg
+# Disable keyboard in Xorg
 function kb-disable {
   xinput float 11
 }
 
+# Enable keyboard in Xorg
+# Note: Run xinput list to find device IDs
 function kb-enable {
   xinput reattach 11 3
 }
