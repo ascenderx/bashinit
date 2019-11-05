@@ -38,6 +38,7 @@
 # mtpaint
 # yelp
 # timidity timidity-interfaces-extra 
+# gpick
 
 #####
 # Crouton: Fix ~/Downloads write issue
