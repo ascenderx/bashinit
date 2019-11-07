@@ -192,6 +192,9 @@ PS1="$PS1_BY\u $PS1_BC\W $PS1_SYM_COL$PS1_SYM $PS1_X"
 unset PS1_SYM
 unset PS1_SYM_COL
 
+# Terminal command: set title on each input line
+PROMPT_COMMAND='THISDIR=$(basename $(pwd)); echo -ne "\x1b]0;$USER@$HOSTNAME:$THISDIR\x07"; unset THISDIR'
+
 # Bash history size settings
 export HISTSIZE=1000
 export HISTFILESIZE=2000
