@@ -9,12 +9,12 @@
 # default-jdk
 # dnsutils
 # vim
-# (gcc, g++)
+# gcc, g++
 # faenza-icon-theme
 # freeglut3-dev
 # gdb
 # htop
-# (python3)
+# python3
 # idle3 python3-pip
 # manpages manpages-dev
 # lshw lshw-gtk
@@ -23,8 +23,9 @@
 # fonts-ubuntu fonts-ubuntu-console
 # tree
 # vokoscreen
-# (xfce4-goodies)
+# xfce4-goodies
 # xinput xcalib
+# ant
 
 #####
 # Other APT packages
