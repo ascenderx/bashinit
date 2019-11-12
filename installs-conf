@@ -26,6 +26,7 @@
 # xfce4-goodies
 # xinput xcalib
 # ant
+# curl
 
 #####
 # Other APT packages
@@ -40,6 +41,7 @@
 # yelp
 # timidity timidity-interfaces-extra 
 # gpick
+# heroku
 
 #####
 # Crouton: Fix ~/Downloads write issue
