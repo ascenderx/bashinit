@@ -42,6 +42,8 @@
 # timidity timidity-interfaces-extra 
 # gpick
 # heroku
+# arduino
+# geany
 
 #####
 # Crouton: Fix ~/Downloads write issue
