@@ -27,6 +27,7 @@
 # xinput xcalib
 # ant
 # curl
+# gvfs-fuse gvfs-backends
 
 #####
 # Other APT packages
