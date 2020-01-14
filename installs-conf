@@ -32,6 +32,7 @@
 #####
 # Other APT packages
 #####
+# gparted
 # openssh-server
 # nodejs npm
 # php7.2-fpm php7.2
