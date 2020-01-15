@@ -34,6 +34,7 @@
 # heroku
 # xfwm4-themes (?)
 # plank
+# gdebi
 
 #####
 # Other APT packages
@@ -54,12 +55,7 @@
 #####
 # android studio
 # cling
-# cm-unicode (computer modern typeface)
-# javarepl
-# lua
-# luaj
-# slack
-# zoom
+# cm-uncode
 
 #####
 # Crouton: Fix ~/Downloads write issue
