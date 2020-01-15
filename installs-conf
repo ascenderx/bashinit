@@ -50,6 +50,18 @@
 # arduino
 
 #####
+# Other packages
+#####
+# android studio
+# cling
+# cm-unicode (computer modern typeface)
+# javarepl
+# lua
+# luaj
+# slack
+# zoom
+
+#####
 # Crouton: Fix ~/Downloads write issue
 #####
 # Comment out "session optional pam_keyinit.so force revoke"
