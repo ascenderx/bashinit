@@ -32,41 +32,49 @@ fi
 # Query the user for all multiple-file operations.
 # This should help prevent accidental deletions (rm).
 
-function rm {
-  /usr/bin/env rm -i $*
-}
+alias rm="/usr/bin/env rm -i"
+#function rm {
+#  /usr/bin/env rm -i $*
+#}
 
-function cp {
-  /usr/bin/env cp -i $*
-}
+alias cp="/usr/bin/env cp -i"
+#function cp {
+#  /usr/bin/env cp -i $*
+#}
 
-function mv {
-  /usr/bin/env mv -i $*
-}
+alias mv="/usr/bin/env mv -i"
+#function mv {
+#  /usr/bin/env mv -i $*
+#}
 
 # Use human-readable file sizes when checking free space, disk lists, etc.
 
-function df {
-  /usr/bin/env df -h $*
-}
+alias df="/usr/bin/env df -h"
+#function df {
+#  /usr/bin/env df -h $*
+#}
 
-function du {
-  /usr/bin/env du -h $*
-}
+alias du="/usr/bin/env du -h"
+#function du {
+#  /usr/bin/env du -h $*
+#}
 
 # Display regex searches in color.
 
-function grep {
-  /usr/bin/env grep --color $*
-}
+alias grep="/usr/bin/env grep --color"
+#function grep {
+#  /usr/bin/env grep --color $*
+#}
 
-function egrep {
-  /usr/bin/env egrep --color $*
-}
+alias egrep="/usr/bin/env egrep --color"
+#function egrep {
+#  /usr/bin/env egrep --color $*
+#}
 
-function fgrep {
-  /usr/bin/env fgrep --color $*
-}
+alias egrep="/usr/bin/env fgrep --color"
+#function fgrep {
+#  /usr/bin/env fgrep --color $*
+#}
 
 ##########
 # ALIASES FOR LISTING DIRECTORIES
@@ -109,68 +117,74 @@ esac
 # MULTI-COLUMN MODE
 
 # Display only visible files and folders by default.
-function ls {
-  /usr/bin/env ls -Fx $COLOR_OPT $GROUP_OPT $*
-}
+alias ls="/usr/bin/env ls -Fx $COLOR_OPT $GROUP_OPT"
+#function ls {
+#  /usr/bin/env ls -Fx $COLOR_OPT $GROUP_OPT $*
+#}
 
+alias lsa="/usr/bin/env ls -AFx $COLOR_OPT $GROUP_OPT"
 # Display all files and folders (including hidden ones).
-function lsa {
-  /usr/bin/env ls -AFx $COLOR_OPT $GROUP_OPT $1
-}
+#function lsa {
+#  /usr/bin/env ls -AFx $COLOR_OPT $GROUP_OPT $1
+#}
 
 # Display only hidden files and folders.
-function lsh {
-  ARG="$1/.*"
-  if [[ -z $1 ]]
-  then
-    ARG=".*"
-  fi
-  /usr/bin/env ls -AdFx $COLOR_OPT $GROUP_OPT $ARG
-}
+#function lsh {
+#  ARG="$1/.*"
+#  if [[ -z $1 ]]
+#  then
+#    ARG=".*"
+#  fi
+#  /usr/bin/env ls -AdFx $COLOR_OPT $GROUP_OPT $ARG
+#}
 
 # ATTRIBUTE-LIST MODE
 
+alias lsl="/usr/bin/env ls -Fho $COLOR_OPT $GROUP_OPT"
 # Display only visible files and folders.
-function lsl {
-  /usr/bin/env ls -Fho $COLOR_OPT $GROUP_OPT $1
-}
+#function lsl {
+#  /usr/bin/env ls -Fho $COLOR_OPT $GROUP_OPT $1
+#}
 
+alias lsla="/usr/bin/env ls -AFho $COLOR_OPT $GROUP_OPT"
 # Display all files and folders.
-function lsla {
-  /usr/bin/env ls -AFho $COLOR_OPT $GROUP_OPT $1
-}
+#function lsla {
+#  /usr/bin/env ls -AFho $COLOR_OPT $GROUP_OPT $1
+#}
 
 # Display only hidden files and folders.
-function lslh {
-  ARG="$1/.*"
-  if [[ -z $1 ]]
-  then
-    ARG=".*"
-  fi
-  /usr/bin/env ls -AdFho $COLOR_OPT $GROUP_OPT $ARG
-}
+#function lslh {
+#  ARG="$1/.*"
+#  if [[ -z $1 ]]
+#  then
+#    ARG=".*"
+#  fi
+#  /usr/bin/env ls -AdFho $COLOR_OPT $GROUP_OPT $ARG
+#}
 
 # SINGLE-COLUMN MODE
 
+alias lss="/usr/bin/env ls -F1 $COLOR_OPT $GROUP_OPT"
 # Display only visible files and folders.
-function lss {
-  /usr/bin/env ls -F1 $COLOR_OPT $GROUP_OPT $1
-}
+#function lss {
+#  /usr/bin/env ls -F1 $COLOR_OPT $GROUP_OPT $1
+#}
 
+alias lssa="/usr/bin/env ls -AF1 $COLOR_OPT $GROUP_OPT"
 # Display all files and folders.
-function lssa {
-  /usr/bin/env ls -AF1 $COLOR_OPT $GROUP_OPT $1
-}
+#function lssa {
+#  /usr/bin/env ls -AF1 $COLOR_OPT $GROUP_OPT $1
+#}
 
 # Display only hidden files and folders.
-function lssh {
-  ARG="$1/.*"
-  if [[ -z $1 ]]
-  then
-    ARG=".*"
-  fi
-  /usr/bin/env ls -AdF1 $COLOR_OPT $GROUP_OPT $ARG
-}
+#function lssh {
+#  ARG="$1/.*"
+#  if [[ -z $1 ]]
+#  then
+#    ARG=".*"
+#  fi
+#  /usr/bin/env ls -AdF1 $COLOR_OPT $GROUP_OPT $ARG
+#}
 
 ##########
 # TERMINAL SETTINGS
