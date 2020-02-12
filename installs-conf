@@ -19,32 +19,43 @@
 # manpages manpages-dev
 # lshw lshw-gtk
 # arc-theme
-# onboard
 # fonts-ubuntu fonts-ubuntu-console
 # tree
-# vokoscreen
 # xfce4-goodies
 # xinput xcalib
 # ant
 # curl
 # gvfs-fuse gvfs-backends
+# openssh-server
+# yelp
+# geany
+# nodejs npm
+# php7.2-fpm php7.2
+# heroku
+# xfwm4-themes (?)
+# plank
+# gdebi
 
 #####
 # Other APT packages
 #####
-# openssh-server
-# nodejs npm
-# php7.2-fpm php7.2
+# vokoscreen
+# onboard
+# gparted
 # musescore
 # milkytracker
 # gimp
 # mtpaint
-# yelp
 # timidity timidity-interfaces-extra 
 # gpick
-# heroku
 # arduino
-# geany
+
+#####
+# Other packages
+#####
+# android studio
+# cling
+# cm-uncode
 
 #####
 # Crouton: Fix ~/Downloads write issue
