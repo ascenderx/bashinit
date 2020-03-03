@@ -51,6 +51,7 @@
 # timidity timidity-interfaces-extra 
 # gpick
 # arduino
+# qpdf
 
 #####
 # Other packages
