@@ -28,6 +28,8 @@
 # ant
 # curl
 # gvfs-fuse gvfs-backends
+# xsltproc
+# xmllint
 
 #####
 # Other APT packages
