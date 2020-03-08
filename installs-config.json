@@ -60,7 +60,8 @@
     "xscreensaver-data",
     "xscreensaver-data-extra",
     "xsltproc",
-    "yelp"
+    "yelp",
+    "zenity"
   ],
   "otherPackages": [
     "Android Studio",
