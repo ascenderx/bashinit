@@ -28,6 +28,8 @@
     "lshw-gtk",
     "manpages",
     "manpages-dev",
+    "mesa-utils",
+    "mesa-utils-extra",
     "milkytracker",
     "mtpaint",
     "musescore",
@@ -46,6 +48,7 @@
     "tree",
     "vim",
     "vokoscreen",
+    "x11-apps",
     "xcalib",
     "xfce4-goodies",
     "xfonts-terminus",
@@ -63,6 +66,40 @@
     "Android Studio",
     "Visual Studio Code",
     "Cling",
-    "CM Unicode Typewriter"
-  ]
+    "CM Unicode Typewriter",
+    "MuseScore 3"
+  ],
+  "aptPackageApps": {
+    "x11-apps": [
+      "atobm",
+      "bitmap",
+      "bmtoa",
+      "ico",
+      "oclock",
+      "rendercheck",
+      "transset",
+      "xbiff",
+      "xcalc",
+      "xclipboard",
+      "xconsole",
+      "xcursorgen",
+      "xditview",
+      "xedit",
+      "xeyes",
+      "xgc",
+      "xload",
+      "xlogo",
+      "xmag",
+      "xman",
+      "xmore",
+      "xwd",
+      "xwud",
+      "Xmark",
+      "x11perf",
+      "x11perfcomp"
+    ],
+    "mesa-utils": [
+      "glxgears"
+    ]
+  }
 }
