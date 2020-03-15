@@ -43,6 +43,7 @@
     "python3",
     "python3-pip",
     "qpdf",
+    "synaptic",
     "timidity",
     "timidity-interfaces-extra",
     "tree",
