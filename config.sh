@@ -24,3 +24,8 @@ ssh-copy-id -i -p<port> <username>@<ipaddress>
 git clone https://github.com/ascenderx/termconfig.git .termconfig
 ~/.termconfig/genlinks.sh
 
+#####
+# Update X defaults
+#####
+xrdb -merge .Xdefaults
+
