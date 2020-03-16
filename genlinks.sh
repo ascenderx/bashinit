@@ -8,10 +8,10 @@ FILES=( \
   "bashrc" \
   "bashutils" \
   "dircolors" \
-#  "lscolors-linux" \
   "lscolors-bsd" \
   "profile" \
   "vimrc" \
+  "Xdefaults" \
   "Xresources" \
 )
 
