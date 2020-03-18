@@ -7,4 +7,7 @@ set shiftwidth=2
 set expandtab
 
 colo elflord
+if has('gui_running')
+  set guifont=xos4\ Terminus\ 12
+endif
 

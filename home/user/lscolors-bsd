@@ -34,17 +34,17 @@ BSD_D="x"
 # Each entry has a foreground and a background color, set in that order.
 # All the entries must be set.
 declare -a COLOR_LIST=( \
-  "$BSD_C$BSD_D" #di \
-  "$BSD_Y$BSD_D" #ln \
-  "$BSD_G$BSD_D" #so \
-  "$BSD_Y$BSD_D" #pi \
-  "$BSD_G$BSD_D" #ex \
-  "$BSD_Y$BSD_D" #bd \
-  "$BSD_Y$BSD_D" #cd \
+  "$BSD_BC$BSD_D" #di \
+  "$BSD_BY$BSD_D" #ln \
+  "$BSD_BG$BSD_D" #so \
+  "$BSD_BY$BSD_D" #pi \
+  "$BSD_BG$BSD_D" #ex \
+  "$BSD_BY$BSD_D" #bd \
+  "$BSD_BY$BSD_D" #cd \
   "$BSD_BW$BSD_R" #su \
   "$BSD_BW$BSD_R" #sg \
-  "$BSD_K$BSD_G" #tw \
-  "$BSD_K$BSD_G" #ow \
+  "$BSD_BK$BSD_G" #tw \
+  "$BSD_BK$BSD_G" #ow \
 )
 
 ##########
