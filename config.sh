@@ -9,6 +9,10 @@ sudo vim /etc/pam.d/su-l
 
 #####
 # XOrg terminal shortcut.
+#
+# Terminus font:
+#   - GNU/Linux: "Terminus"
+#   - FreeBSD: "xos4 Terminus"
 #####
 xterm -title "XTerm" -fa "Terminus" -fs 12 -bg "black" -fg "white" -bc +bdc -cr "green" -ms "red" -e "/bin/bash" -l
 
